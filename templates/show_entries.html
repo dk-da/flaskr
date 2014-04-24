@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+  <ul class=entries>
+  {% for entry in entries %}
+    <li><h2 style="text-align:left;float:left;"><a href="{{ url_for('show_entry', idx=entry.idx)}}">{{ entry.title }}</a></h2> <h4 style="text-align:right;">작성자:{{ entry.userid }}</h4></li>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em></li>
+  {% endfor %}
+{% endblock %}
+
